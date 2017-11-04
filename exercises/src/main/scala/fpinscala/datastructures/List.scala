@@ -169,6 +169,7 @@ object List { // `List` companion object. Contains functions for creating and wo
   }
 
   def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = {
+    @tailrec
     def inner(sup: List[A], sub: List[A], started: Boolean = false): Boolean = sup match {
        case Nil => sub == Nil
        case Cons(h, t) => sub match {
